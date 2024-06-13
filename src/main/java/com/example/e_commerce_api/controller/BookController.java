@@ -65,7 +65,6 @@ public class BookController {
 
         // Prevent overwriting a book with same ID
         book.setId(0);
-
         // Check if book with given title already exists
         Book result = service.getBookByTitle(book.getTitle());
         if (result != null) {
