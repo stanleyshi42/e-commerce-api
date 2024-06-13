@@ -31,3 +31,11 @@ build/
 
 ### VS Code ###
 .vscode/
+
+logs/
+
+.mvn/wrapper/
+
+mvnw
+
+mvnw.cmd
