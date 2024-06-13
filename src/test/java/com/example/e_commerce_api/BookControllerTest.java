@@ -9,8 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import com.example.e_commerce_api.controller.BookController;
 import com.example.e_commerce_api.entity.Book;
+import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
+@ActiveProfiles("test")
 class BookControllerTest {
 
     @Autowired
