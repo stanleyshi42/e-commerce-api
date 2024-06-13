@@ -1,8 +1,16 @@
 package com.example.e_commerce_api.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Book {
 
     @Id
@@ -14,47 +22,5 @@ public class Book {
 
     public String author;
     public int quantity;
-
-    public Book() {
-    }
-
-    public Book(long id, String title, String author, int quantity) {
-        this.id = id;
-        this.title = title;
-        this.author = author;
-        this.quantity = quantity;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
 
 }

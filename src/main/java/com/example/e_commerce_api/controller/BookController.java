@@ -46,17 +46,17 @@ public class BookController {
     }
 
     @GetMapping("/books/title/{title}")
-    public Book getBookByTitle(@PathVariable String title) {
+    public ResponseEntity<?> getBookByTitle(@PathVariable String title) {
         logger.info("Getting book by title: {}", title);
 
         Book result = service.getBookByTitle(title);
         if (result == null) {
             logger.warn("Book not found");
-            return null;
+            return ResponseEntity.status(404).body("Book not found");
         }
 
         logger.info("Book successfully found");
-        return service.getBookByTitle(title);
+        return ResponseEntity.ok().body(result);
     }
 
     @PostMapping("/books")
@@ -65,7 +65,6 @@ public class BookController {
 
         // Prevent overwriting a book with same ID
         book.setId(0);
-
         // Check if book with given title already exists
         Book result = service.getBookByTitle(book.getTitle());
         if (result != null) {
